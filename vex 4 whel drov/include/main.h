@@ -35,6 +35,7 @@
 #define PROS_USE_LITERALS
 
 #include "api.h"
+#include "subsystems/drivebase.h"
 
 /**
  * You should add more #includes here
@@ -76,6 +77,7 @@ void opcontrol(void);
  * You can add C++-only headers here
  */
 //#include <iostream>
+#include <cstdint>
 #endif
 
 #endif  // _PROS_MAIN_H_
