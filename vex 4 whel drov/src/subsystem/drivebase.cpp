@@ -8,7 +8,7 @@ drivebase::drivebase(std::int8_t  topLeftPort, std::int8_t  topRightPort, std::i
     m_botRightMotor = pros::Motor(BotRightPort,true);
 }
 
-drivebase::arcadeDrive(std::int32_t xAxisSpeed, std::int32_t zAxisSpeed){
+void drivebase::arcadeDrive(std::int32_t xAxisSpeed, std::int32_t zAxisSpeed){
     std::int32_t left = xAxisSpeed + zAxisSpeed;
     std::int32_t right = xAxisSpeed + zAxisSpeed;
     m_topLeftMotor.move(left);

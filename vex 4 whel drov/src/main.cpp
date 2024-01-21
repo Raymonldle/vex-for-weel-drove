@@ -1,6 +1,5 @@
 #include "main.h"
 #include "constants.h"
-
 /**
  * A callback function for LLEMU's center button.
  *
@@ -81,15 +80,15 @@ void opcontrol() {
 	controlelr_t is one of the E_CONTROLLER_MASTER OR E_CONTOLLER_PARTNER
 	*/
 	pros::Controller m_controller(pros::E_CONTROLLER_MASTER);
-	drivebase m_db(driveConstants::kTopLeftPort,driveConstants::kTopRightPort,driveConstants::kBotLeftPort,driveConstants::kBotRightPort);
+	drivebase m_db(DriveConstants::kTopLeftPort,DriveConstants::kTopRightPort,DriveConstants::kBotLeftPort,DriveConstants::kBotRightPort);
 
 
 	while (true) {
 		pros::lcd::print(0, "%d %d %d", (pros::lcd::read_buttons() & LCD_BTN_LEFT) >> 2,
 		                 (pros::lcd::read_buttons() & LCD_BTN_CENTER) >> 1,
 		                 (pros::lcd::read_buttons() & LCD_BTN_RIGHT) >> 0);
-		int power = m_controller.get_analog(E_CONTROLLER_ANALOG_LEFT_Y);
-		int turn = m_controller.get_analog(E_CONTROLLER_ANALOG_RIGHT_X);
+		int power = m_controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+		int turn = m_controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 		m_db.arcadeDrive(power,turn);
 
 	
