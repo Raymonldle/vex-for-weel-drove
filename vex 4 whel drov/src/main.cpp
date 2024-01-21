@@ -90,6 +90,24 @@ void opcontrol() {
 		int power = m_controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
 		int turn = m_controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 		m_db.arcadeDrive(power,turn);
+		
+		if(m_controller.get_digital(pros::E_CONTROLLER_DIGITAL_X)){
+			m_db.m_botLeftMotor.move(10);
+		}
+		if(m_controller.get_digital(pros::E_CONTROLLER_DIGITAL_Y)){
+			m_db.m_botLeftMotor.move(10);
+		}
+		if(m_controller.get_digital(pros::E_CONTROLLER_DIGITAL_B)){
+			m_db.m_botLeftMotor.move(10);
+		}
+		if(m_controller.get_digital(pros::E_CONTROLLER_DIGITAL_A)){
+			m_db.m_botLeftMotor.move(10);
+		}
+
+
+
+
+
 
 	
 

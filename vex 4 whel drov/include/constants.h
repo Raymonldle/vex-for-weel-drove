@@ -7,10 +7,10 @@
 #include <cstdint>
 //note: const is to c++ as final is to java
 namespace DriveConstants {
-    const std::int8_t kTopLeftPort = 0;
-    const std::int8_t kTopRightPort = 0;
-    const std::int8_t kBotLeftPort = 0;
-    const std::int8_t kBotRightPort = 0;
+    const std::int8_t kTopLeftPort = 11;
+    const std::int8_t kTopRightPort = 1;
+    const std::int8_t kBotLeftPort = 10;
+    const std::int8_t kBotRightPort = 20;
 }
 
 #endif

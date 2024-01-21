@@ -2,10 +2,10 @@
 
 
 drivebase::drivebase(std::int8_t  topLeftPort, std::int8_t  topRightPort, std::int8_t  botLeftPort, std::int8_t  botRightPort): 
-    m_topLeftMotor{TopLeftPort},
-    m_topRightMotor{TopRightPort}
-    m_botLeftMotor(BotLeftPort,true),
-    m_botRightMotor(BotRightPort,true), {}
+    m_topLeftMotor{topLeftPort},
+    m_topRightMotor{topRightPort},
+    m_botLeftMotor(botLeftPort,true),
+    m_botRightMotor(botRightPort,true) {}
 
 
 void drivebase::arcadeDrive(std::int32_t xAxisSpeed, std::int32_t zAxisSpeed){
@@ -15,4 +15,8 @@ void drivebase::arcadeDrive(std::int32_t xAxisSpeed, std::int32_t zAxisSpeed){
     m_topRightMotor.move(right);
     m_botLeftMotor.move(left);
     m_botRightMotor.move(right);
+
+    
+
+   
 }
