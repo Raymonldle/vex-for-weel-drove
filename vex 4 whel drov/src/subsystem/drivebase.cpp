@@ -1,12 +1,12 @@
 #include "subsystems/drivebase.h"
 
 
-drivebase::drivebase(std::int8_t  topLeftPort, std::int8_t  topRightPort, std::int8_t  botLeftPort, std::int8_t  botRightPort) {
-    m_topLeftMotor  = pros::Motor(TopLeftPort);
-    m_topRightMotor = pros::Motor(TopRightPort,true);
-    m_botLeftMotor  = pros::Motor(BotLeftPort);
-    m_botRightMotor = pros::Motor(BotRightPort,true);
-}
+drivebase::drivebase(std::int8_t  topLeftPort, std::int8_t  topRightPort, std::int8_t  botLeftPort, std::int8_t  botRightPort): 
+    m_topLeftMotor{TopLeftPort},
+    m_topRightMotor{TopRightPort}
+    m_botLeftMotor(BotLeftPort,true),
+    m_botRightMotor(BotRightPort,true), {}
+
 
 void drivebase::arcadeDrive(std::int32_t xAxisSpeed, std::int32_t zAxisSpeed){
     std::int32_t left = xAxisSpeed + zAxisSpeed;
